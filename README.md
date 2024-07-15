@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# AI-Powered Database Query App - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Welcome to the frontend repository of the AI-powered database query application. This frontend provides an interactive user interface for submitting queries and viewing results. It is built using React and styled with custom CSS, offering a user-friendly experience.
 
-In the project directory, you can run:
+## Key Functionalities
 
-### `npm start`
+- **Query Form**: A form to accept user queries and send them to the backend.
+- **Result Display**: Displays query results in a tabular format.
+- **Error Handling**: Handles errors gracefully.
+- **Mobile Responsiveness**: Improving the layout and design to ensure optimal usability on mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API Endpoints
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `/query` [POST]
 
-### `npm test`
+- **Description**: Handles user queries and returns the results.
+- **Request Body**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```json
+  {
+    "query": "Find me companies attending Oil & Gas related events"
+  }
+  ```
 
-### `npm run build`
+- **Response**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ```json
+  [
+    {
+      "company_name": "Company A",
+      "event_name": "Oil & Gas Expo 2023",
+      ...
+    },
+    ...
+  ]
+  ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (version 12 or higher)
+- npm (Node package manager)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Steps
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the Repository**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone <repository-url>
+   cd frontend
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install Dependencies**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Run the Application**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm start
+   ```
 
-### Code Splitting
+   The application will be available at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+frontend/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   └── QueryForm.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   ├── index.css
+│   └── ...
+├── package.json
+├── README.md
+└── ...
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Key Components
 
-### Making a Progressive Web App
+- **App.js**
+  - Main component that renders the application.
+  - Imports and uses the `QueryForm` component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **QueryForm.js**
+  - Handles user input, sends queries to the backend, and displays results.
+  - Manages state for user input, results, loading, and errors.
 
-### Advanced Configuration
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `index.css`
 
-### Deployment
+- **Global Styles**: Sets the base font and background color for the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `App.css`
 
-### `npm run build` fails to minify
+- **Component Styles**: Styles for the main app container, header, form elements, buttons, and table.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Key Challenges
+
+- **User Interface**: Ensuring a user-friendly and responsive interface that provides a seamless experience.
+- **State Management**: Effectively managing various states such as loading, error, and no results, to enhance user interaction.
+- **Edge Case Handling**: Handling edge cases such as no data found and displaying appropriate messages to the user.
+- **Loader Implementation**: Showing a loading spinner while the query is being processed and disabling the submit button to prevent multiple submissions.
+
+## Potential Improvements
+
+- **Enhanced Features**: Adding advanced features like query history, autocomplete suggestions, and saved queries for better user experience.
+- **User Feedback**: Providing more detailed feedback and suggestions based on user queries to guide users in refining their searches.
+- **Performance Optimization**: Implementing performance optimizations such as lazy loading for large datasets and using memoization techniques to minimize unnecessary re-renders.
+- **Error Handling**: Provide meaningful feedback to the users on errors.
+- **Chat-like Interface**: Developing a chat-like interface for more interactive and intuitive user experience.
+- **Input Types**: Allowing users to input other types of data besides queries, such as dates or filters.
+- **Data Visualization**: Displaying plots, charts, and other visualizations where applicable to enhance data presentation.
+- **Result Copy**: Enabling users to easily copy query results in their preferred format, such as JSON or csv, for further use.
+- **Regenerate Results**: Providing an option to regenerate results without re-entering the query.
+- **Voice Input**: Incorporating voice input functionality to allow users to speak their queries.
