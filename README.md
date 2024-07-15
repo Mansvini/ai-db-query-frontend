@@ -50,7 +50,7 @@ Welcome to the frontend repository of the AI-powered database query application.
 
    ```bash
    git clone https://github.com/Mansvini/ai-db-query-frontend.git
-   cd frontend
+   cd ai-db-query-frontend
    ```
 
 2. **Install Dependencies**
