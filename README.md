@@ -49,7 +49,7 @@ Welcome to the frontend repository of the AI-powered database query application.
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Mansvini/ai-db-query-frontend.git
    cd frontend
    ```
 
