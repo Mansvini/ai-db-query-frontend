@@ -59,12 +59,12 @@ Welcome to the frontend repository of the AI-powered database query application.
    npm install
    ```
 
-3. **Update the `.env` file:**
+3. **Create a `.env` file in the project root and add the following environment variables:**
       ```ini
-      REACT_APP_BACKEND_URL=http://localhost:3002 
+      REACT_APP_BACKEND_URL=http://localhost:<your_backend_port> 
       ```
 
-3. **Run the Application**
+4. **Run the Application**
 
    ```bash
    npm start
