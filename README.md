@@ -59,6 +59,11 @@ Welcome to the frontend repository of the AI-powered database query application.
    npm install
    ```
 
+3. **Update the `.env` file:**
+      ```ini
+      REACT_APP_BACKEND_URL=http://localhost:3002 
+      ```
+
 3. **Run the Application**
 
    ```bash
